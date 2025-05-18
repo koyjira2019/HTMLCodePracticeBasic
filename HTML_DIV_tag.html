@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DIV Tag Example</title>
+    <script>
+        function changeContent() {
+            const output = document.getElementById("output");
+            output.innerHTML = "คุณคลิกปุ่มแล้ว! 🎉";
+            output.style.backgroundColor = "#ffe082";
+            output.style.border = "2px solid orange";
+        }
+
+        function toggleMenu() {
+            var nav = document.getElementById("navbar");
+            nav.classList.toggle("responsive");
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            border: 2px solid #dddbf1;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .box {
+            border: 1px solid #dddbf1;
+            padding: 16px;
+            margin: 10px;
+        }
+
+
+        .header {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .content {
+            margin-top: 10px;
+        }
+
+        .navbar {
+            background-color: #352c86;
+            overflow: hidden;
+        }
+
+        .navbar a,
+        .dropdown-btn {
+
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropdown-btn {
+            background-color: #d4f5fa;
+            color: rgb(49, 65, 157);
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .header {
+            background-color: #9fd3fe;
+        }
+
+        .content {
+            background-color: #d7f1ff;
+        }
+
+        .menu-toggle {
+            display: none;
+            float: right;
+            font-size: 20px;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                display: none;
+            }
+
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .navbar.responsive a {
+            display: block;
+            float: none;
+            text-align: left;
+        }
+
+        /* div.containerDiv div {
+            width: 100%;
+            overflow: auto;
+        }
+
+        div.containerDiv div {
+            width: 33%;
+            float: left;
+        }
+         */
+        .containerDiv {
+            display: flex;
+            gap: 10px;
+        }
+
+        .containerDiv div {
+            flex: 1;
+            background-color: #eee;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            background-color: #136cb6;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="#home">หน้าแรก</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">สินค้า ▾</button>
+            <div class="dropdown-content">
+                <a href="#">ดินสอ</a>
+                <a href="#">ปากกา</a>
+                <a href="#">สมุด</a>
+            </div>
+        </div>
+        <a href="#about">เกี่ยวกับเรา</a>
+        <a href="#contact">ติดต่อ</a>
+    </div>
+    <div style="border: 1px solid #dddbf1; padding: 1px;  margin: 1px;">
+        <p>ตัวอย่างการเขียน Tag Div <code>&lt;div&gt;</code> tag in HTML.</p>
+    </div>
+
+    <div class="box header">
+        <h1>เว็บไซต์เครื่องเขียน</h1>
+    </div>
+
+    <div class="box content">
+        <p>ยินดีต้อนรับสู่ร้านเครื่องเขียนของเรา!</p>
+        <ul>
+            <li> ✍️ เขียนลื่น ไม่สะดุด – ปากกาที่หมึกไหลลื่น ดินสอที่ไม่หักง่าย ช่วยให้คุณเขียนได้ต่อเนื่องไม่เสียสมาธิ
+            </li>
+            <li>🎨 ช่วยจุดประกายไอเดีย – สมุดโน้ต กระดาษสี ปากกาไฮไลท์ และเครื่องมือศิลปะต่างๆ
+                สามารถปลุกความคิดสร้างสรรค์ได้อย่างไม่น่าเชื่อ</li>
+            <li>📚 สร้างระบบระเบียบ – โฟลเดอร์ แฟ้ม คลิปหนีบกระดาษ และป้ายติดชื่อ เป็นผู้ช่วยที่ทำให้งานเป็นระเบียบ
+                หาง่าย ประหยัดเวลา</li>
+            <li>🎁 ของขวัญน่ารัก ใช้ได้จริง – เครื่องเขียนดีไซน์เก๋ๆ เป็นของขวัญยอดนิยมสำหรับคนทุกวัย
+                ทั้งน่ารักและมีประโยชน์</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="header">เครื่องเขียน – พันธมิตรคู่ใจของทุกช่วงวัย</div>
+        <div class="content">
+            <p>“เครื่องเขียน” ไม่ได้เป็นเพียงแค่ของใช้ในห้องเรียนหรือสำนักงาน แต่เป็นเครื่องมือสำคัญที่ช่วยให้เราจดจำ
+                สร้างสรรค์ และสื่อสารความคิดให้ออกมาเป็นรูปร่าง ไม่ว่าจะเป็นเด็กนักเรียน นักศึกษา คนทำงาน
+                ไปจนถึงศิลปินหรือเจ้าของธุรกิจ
+                เครื่องเขียนคุณภาพดีสามารถเปลี่ยนประสบการณ์การทำงานให้มีประสิทธิภาพและสนุกยิ่งขึ้น</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header"><strong>เครื่องเขียนดีๆ </strong>คือเพื่อนร่วมทางของความฝันและความสำเร็จ</div>
+        <div class="content">
+            <div style="border: 1px dashed #888; padding: 10px; margin-top: 10px;">
+                <p>
+                    ไม่ว่าคุณจะเขียนอะไร เราพร้อมเป็นส่วนหนึ่งในทุกบรรทัดของคุณ
+                    มาเลือกช้อปเครื่องเขียนที่ใช่สำหรับคุณได้แล้ววันนี้!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box content containerDiv">
+        <div style="background-color:#FFF4A3;">
+            <h2>ดินสอ</h2>
+            <p>ดินสอกด</p>
+            <p>ดินสอไม้</p>
+        </div>
+
+        <div style="background-color:#FFC0C7;">
+            <h2>ปากกา</h2>
+            <p>ปากกาลูกลื่น</p>
+            <p>ปากกาหมึกเจล </p>
+            <p>ปากกาเน้นข้อความ</p>
+        </div>
+
+        <div style="background-color:#D9EEE1;">
+            <h2>สมุด</h2>
+            <p>สมุดเขียนตีเส้น</p>
+            <p>สมุดไม่มีเส้น</p>
+            <p>สมุดโน้ต</p>
+        </div>
+    </div>
+
+    <div class="box footer">
+        <p>ติดต่อ: info@example.com</p>
+    </div>
+
+</body>
+
+</html>

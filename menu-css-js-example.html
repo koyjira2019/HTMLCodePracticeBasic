@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เมนูตัวอย่างด้วย CSS และ JavaScript</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .menu-toggle {
+      display: none;
+      float: right;
+      font-size: 20px;
+      color: white;
+      padding: 14px 20px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar a {
+        display: none;
+      }
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .navbar.responsive a {
+      display: block;
+      float: none;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+  <span class="menu-toggle" onclick="toggleMenu()">☰ เมนู</span>
+  <a href="#">หน้าแรก</a>
+  <a href="#">สินค้า</a>
+  <a href="#">เกี่ยวกับเรา</a>
+  <a href="#">ติดต่อ</a>
+</div>
+
+<div style="padding:20px;">
+  <h2>ร้านเครื่องเขียนออนไลน์</h2>
+  <p>คลิก ☰ เพื่อเปิดเมนูบนหน้าจอขนาดเล็ก</p>
+</div>
+
+	 <h1>กดปุ่มเพื่อดูการทำงานของ JavaScript</h1>
+  <button onclick="changeContent()">คลิกฉัน!</button>
+
+  <div id="output">ข้อความจะเปลี่ยนตรงนี้</div>
+
+  <script>
+    function changeContent() {
+      const output = document.getElementById("output");
+      output.innerHTML = "คุณคลิกปุ่มแล้ว! 🎉";
+      output.style.backgroundColor = "#ffe082";
+      output.style.border = "2px solid orange";
+    }
+  </script>
+	
+	
+<script>
+  function toggleMenu() {
+    var nav = document.getElementById("navbar");
+    nav.classList.toggle("responsive");
+  }
+</script>
+
+</body>
+</html>
