@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Menu Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .menu-title {
+            font-size: 1.5em;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-item:hover {
+            background: #f0f8ff;
+        }
+
+        .product-details {
+            display: none;
+            margin-top: 16px;
+            padding: 12px;
+            background: #e6f7ff;
+            border-radius: 6px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="menu-title">Product Menu</div>
+        <ul class="product-list">
+            <li class="product-item" onclick="showDetails('product1')">Product 1</li>
+            <li class="product-item" onclick="showDetails('product2')">Product 2</li>
+            <li class="product-item" onclick="showDetails('product3')">Product 3</li>
+            <li class="product-item" onclick="showDetails('product4')">Product 4</li>
+        </ul>
+        <div id="product1" class="product-details">
+            <strong>Product 1</strong><br>
+            Description for product 1.
+        </div>
+        <div id="product2" class="product-details">
+            <strong>Product 2</strong><br>
+            Description for product 2.
+        </div>
+        <div id="product3" class="product-details">
+            <strong>Product 3</strong><br>
+            Description for product 3.
+        </div>
+        <div id="product4" class="product-details">
+            <strong>Product 4</strong><br>
+            Description for product 4.
+        </div>
+    </div>
+    <script>
+        function showDetails(productId) {
+            // Hide all details
+            document.querySelectorAll('.product-details').forEach(function (detail) {
+                detail.style.display = 'none';
+            });
+            // Show selected
+            document.getElementById(productId).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
